@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up easyWallbox over Bluetooth",
+        "description": "Enter the Bluetooth address and the charger authorization PIN (A: field in the QR code). OS-level BLE pairing is separate and may require the P: code from the QR label.",
+        "data": {
+          "address": "Bluetooth address (MAC)",
+          "auth_pin": "Authorization PIN (A:)",
+          "max_amps": "Maximum allowed current (A)"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Invalid Bluetooth MAC",
+      "invalid_pin": "Invalid PIN (4-6 digits)"
+    }
+  }
+}

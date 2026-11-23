@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurar easyWallbox por Bluetooth",
+        "description": "Introduce la dirección Bluetooth y el PIN de autorización del cargador (campo A: del QR). El emparejamiento BLE del sistema operativo es independiente y puede requerir el código P: del QR.",
+        "data": {
+          "address": "Dirección Bluetooth (MAC)",
+          "auth_pin": "PIN de autorización (A:)",
+          "max_amps": "Límite máximo permitido (A)"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "MAC Bluetooth no válida",
+      "invalid_pin": "PIN no válido (4 a 6 dígitos)"
+    }
+  }
+}

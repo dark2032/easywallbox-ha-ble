@@ -1,0 +1,17 @@
+Guía rápida para publicar el prototipo de easyWallbox BLE
+
+1. Crea en GitHub un repositorio público llamado easywallbox-ha-ble (u otro nombre).
+2. Descomprime este ZIP. Sube TODO su contenido, conservando carpetas:
+   README.md, hacs.json, .github/, custom_components/, tests/ y .gitignore.
+3. En custom_components/easywallbox_ble/manifest.json cambia TU_USUARIO por tu usuario.
+   Si le das otro nombre al repositorio, ajusta también las dos URL.
+4. Haz commit en main. Antes de la primera prueba puedes crear Release tag v0.1.0.
+5. Home Assistant 2026.11+: Ajustes > Marketplace > Add from link > URL del repositorio.
+   Home Assistant anterior: HACS > Repositorios personalizados > categoría Integration.
+6. Descarga la integración. No pruebes escritura de corriente en producción sin validar BLE,
+   PIN y protecciones. Las lecturas tampoco están comprobadas contra hardware real.
+7. Para actualizar: cambia manifest.json version, publica GitHub Release con tag coincidente,
+   instala actualización en Marketplace / HACS y reinicia Home Assistant.
+
+La versión que hay aquí es un PROTOTIPO SIN EMPAREJAMIENTO BLE AUTÓMATICO; el PIN A:
+NO es el código de pairing P:. El cargador y las unidades todavía no se han probado.
