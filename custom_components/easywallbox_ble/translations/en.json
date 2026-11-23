@@ -2,18 +2,27 @@
   "config": {
     "step": {
       "user": {
-        "title": "Set up easyWallbox over Bluetooth",
-        "description": "Enter the Bluetooth address and the charger authorization PIN (A: field in the QR code). OS-level BLE pairing is separate and may require the P: code from the QR label.",
+        "title": "easyWallbox Bluetooth setup",
+        "description": "The integration tests 6 steps without changing charging parameters. The A: PIN authorizes commands; P: is the OS pairing passkey and cannot be injected automatically by this version. Result: {diagnostic}",
         "data": {
-          "address": "Bluetooth address (MAC)",
-          "auth_pin": "Authorization PIN (A:)",
-          "max_amps": "Maximum allowed current (A)"
+          "discovered_device": "Discovered device (or manual)",
+          "address": "Bluetooth MAC when using manual mode",
+          "auth_pin": "Authorization PIN (A: in QR)",
+          "connection_mode": "Bluetooth connection method",
+          "max_amps": "Maximum current (not changed during test)"
         }
       }
     },
     "error": {
       "invalid_address": "Invalid Bluetooth MAC",
-      "invalid_pin": "Invalid PIN (4-6 digits)"
+      "invalid_pin": "Invalid A: PIN (4 to 6 digits)",
+      "no_adapter": "No connectable Bluetooth scanner in Home Assistant.",
+      "not_found": "Wallbox not visible in scan.",
+      "connection_failed": "Could not connect over BLE; choose another method.",
+      "service_failed": "Wallbox GATT characteristics unavailable or require pairing.",
+      "auth_failed": "Authorization failed; check A: PIN or OS pairing P:.",
+      "read_failed": "Authorization succeeded but test read failed.",
+      "unexpected": "Unexpected error; see Home Assistant logs."
     }
   }
 }

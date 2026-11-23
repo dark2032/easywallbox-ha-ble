@@ -2,18 +2,27 @@
   "config": {
     "step": {
       "user": {
-        "title": "Configurar easyWallbox por Bluetooth",
-        "description": "Introduce la dirección Bluetooth y el PIN de autorización del cargador (campo A: del QR). El emparejamiento BLE del sistema operativo es independiente y puede requerir el código P: del QR.",
+        "title": "Configuración Bluetooth de easyWallbox",
+        "description": "La integración comprobará 6 etapas sin modificar la carga. El PIN A: autoriza comandos; el PIN P: es para emparejamiento del sistema operativo y NO puede introducirse automáticamente en esta versión. Resultado: {diagnostic}",
         "data": {
-          "address": "Dirección Bluetooth (MAC)",
-          "auth_pin": "PIN de autorización (A:)",
-          "max_amps": "Límite máximo permitido (A)"
+          "discovered_device": "Dispositivo visible (o manual)",
+          "address": "MAC Bluetooth si se elige manual",
+          "auth_pin": "PIN de autorización (A: del QR)",
+          "connection_mode": "Método de conexión Bluetooth",
+          "max_amps": "Límite máximo de corriente (no se modifica en la prueba)"
         }
       }
     },
     "error": {
-      "invalid_address": "MAC Bluetooth no válida",
-      "invalid_pin": "PIN no válido (4 a 6 dígitos)"
+      "invalid_address": "MAC no válida: XX:XX:XX:XX:XX:XX",
+      "invalid_pin": "PIN A: no válido (de 4 a 6 dígitos)",
+      "no_adapter": "No hay Bluetooth de conexión disponible en Home Assistant.",
+      "not_found": "La easyWallbox no aparece durante el escaneo.",
+      "connection_failed": "No se ha podido establecer la conexión BLE; prueba otro método.",
+      "service_failed": "No se encontraron las características de easyWallbox o requieren emparejamiento.",
+      "auth_failed": "La autorización no se ha completado; comprueba PIN A: o emparejamiento P:.",
+      "read_failed": "Se ha autenticado pero falló la lectura de prueba.",
+      "unexpected": "Error inesperado. Revisa los registros de Home Assistant."
     }
   }
 }

@@ -5,15 +5,13 @@
   "codeowners": [],
   "config_flow": true,
   "dependencies": [
-    "bluetooth"
+    "bluetooth",
+    "bluetooth_adapters"
   ],
   "documentation": "https://github.com/dark2032/easywallbox-ha-ble#readme",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "requirements": [],
-  "version": "0.1.0",
   "issue_tracker": "https://github.com/dark2032/easywallbox-ha-ble/issues",
-  "categories": [
-    "energy.ev_charging"
-  ]
+  "requirements": [],
+  "version": "0.1.1"
 }
